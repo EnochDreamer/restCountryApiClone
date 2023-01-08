@@ -42,7 +42,9 @@ class Countries(db.Model):
             'currency':self.currency,
             'cca3':self.cca3,
             'official_language':self.official_language,
-            'continent':self.continent.name
+            'continent_id':self.continent_id,
+            'continent_name':self.continent.name
+
         })
 
     
