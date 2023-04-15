@@ -1,0 +1,44 @@
+.page{
+    display: flex;
+    width: 20vw;
+    height: 5%;
+    background-color: inherit;
+    margin: auto;
+    margin-top: 15px;
+    
+
+
+}
+.next-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(70, 93, 99);
+    width: 20%;
+    color: rgba(247, 235, 72, 0.925);
+}
+.prev-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(70, 93, 99);
+    width: 20%;
+    color: rgba(247, 235, 72, 0.925);
+}
+.page-count{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:60% ;
+}
+.disabled{
+    pointer-events: none;
+    color: darkgrey;
+}
+
+
+.page>button{
+    
+    border-radius: 5px;
+    
+}

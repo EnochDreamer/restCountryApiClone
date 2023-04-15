@@ -1,20 +1,22 @@
 import { useState } from 'react'
-import { Link ,useLocation } from 'react-router-dom'
+import { Link ,useLocation, useNavigate } from 'react-router-dom'
 import './styles/addCountryForm.css'
-function AddCountryForm() {
+
+function EditCountryForm() {
     const [error,setError]=useState('')
     const location=useLocation()
-    const {continents}=location.state
+    const {continents,country}=location.state
     const {setFlashMessage}=location.data
+    const navigate=useNavigate()
     console.log(continents)
 
     const [formInput, setFormInput] = useState({
-        name: '',
-        population: '',
-        currency: '',
-        cca3: '',
-        official_language: '',
-        continent: ''
+        common_name: country.common_name,
+        population: country.population,
+        currency: country.currency,
+        cca3: country.cca3,
+        official_language: country.official_language,
+        continent_id: country.continent_id
     })
     function handleForm(e) {
         const { name, value } = e.target
@@ -28,8 +30,8 @@ function AddCountryForm() {
 
     function handleSubmit(e) {
         e.preventDefault()
-        fetch('/countries', {
-            method: 'POST',
+        fetch(`/countries/${country.id}`, {
+            method: 'PUT',
             body: JSON.stringify(formInput),
             headers: {
                 'Content-Type': 'application/json'
@@ -38,17 +40,12 @@ function AddCountryForm() {
         .then((res)=>res.json())
         .then((data)=>{
             console.log(data)
-            setFlashMessage(data.flash_message)
+            setFlashMessage(data.setFlashMessage)
+           data.success && navigate('/')
         })
         
-        setFormInput({
-            name: '',
-            population: '',
-            currency: '',
-            cca3: '',
-            official_language: '',
-            continent: ''
-        })
+        
+       
     }
 
     return (
@@ -64,8 +61,8 @@ function AddCountryForm() {
                     id='name'
                     placeholder='Enter Name'
                     type='text'
-                    name='name'
-                    value={formInput.name}
+                    name='common_name'
+                    value={formInput.common_name}
                     onChange={handleForm}
                     required
                 />
@@ -113,8 +110,8 @@ function AddCountryForm() {
                 <label  htmlFor='continent'>select Continent</label>
                 <select
                     id='continent'
-                    name='continent'
-                    value={formInput.continent}
+                    name='continent_id'
+                    value={formInput.continent_id}
                     onChange={handleForm}
                     required
                 >
@@ -130,4 +127,4 @@ function AddCountryForm() {
         </div>);
 }
 
-export default AddCountryForm;
+export default EditCountryForm;

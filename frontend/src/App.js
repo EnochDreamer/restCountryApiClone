@@ -1,39 +1,44 @@
-
-import { Link,Routes,Route } from 'react-router-dom';
 import './App.css';
 import Countries from './Countries'
-import Continents from './Continents'
-import Continent from './Continent'
-import Country from './Country'
 import AddCountryForm from './AddCountryForm'
+import LoginForm from './LoginForm'
+import SignupForm from './SignupForm'
+import EditCountryForm from './EditCountryForm'
+import { Routes,Route } from 'react-router-dom';
+// import ContinentList from './ContinentList'
 
-function App(){
+function App() {
 
-return (<>
+    // const [countries, setCountries] = useState([])
+    // const [page, setPage] = useState(1)
+    // const [totalCountries, setTotalCountries] = useState(1)
+    // const [show, setShow] = useState(false)
+    // function handleShow() {
+    //     setShow((prevShow) => !prevShow)
+    // }
+
+
     
-    <Routes> 
-        <Route exact path='/'element={<>
-        <Link to='/countries'>All Countries</Link>
-        <Link to='/add'>Add Country</Link>
-        <Continents/>
-        </>
-        } > 
 
-        </Route>
-        <Route path='/continent'element={<Continent/>} > 
-        </Route>
-        <Route path='/countries' element={<Countries/>}>
-        </Route> 
-        <Route path='/country' element={<Country/>}>
-        </Route>
-        <Route path='/add' element={<AddCountryForm/>}>
-        </Route>
+
     
-    </Routes>
-
-
-</>
-)
+    return (<>
+        
+        <Routes>
+            <Route path='/' exact element={
+            <Countries/>
+            } >
+            </Route>
+            <Route path='/add' element={<AddCountryForm />}>
+            </Route>
+            <Route path='/login' element={<LoginForm />}>
+            </Route>
+            <Route path='/sign-up' element={<SignupForm />}>
+            </Route>
+            <Route path='/edit' element={<EditCountryForm />}>
+            </Route>
+        </Routes>
+    </>)
 }
 
 export default App;

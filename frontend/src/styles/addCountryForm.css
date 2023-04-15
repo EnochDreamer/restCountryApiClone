@@ -1,0 +1,115 @@
+.close-icon{
+    display: flex;
+    align-items: center;
+    color: red;
+    border: none;
+    outline: none;
+    height: 38px;
+    width: 38px;
+    cursor: pointer;
+    font-size: 2.5em;
+}
+.form-container{
+    margin: 0px;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(247, 236, 145, 0.788);
+    
+}
+
+form{
+    width:  60%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 30px;
+    background-color: rgba(83, 76, 31, 0.719);
+    border-radius: 5px;
+}
+
+form > label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4em;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.error{
+    color: red;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.3em;
+}
+input[type=text]:focus  {
+    border: none;
+    outline: none;
+    border-style: solid;
+    border-color: rgba(5, 60, 122, 0.623);
+    
+}
+
+input[type=text]  {
+    background-color: darkslategrey;
+    font-size: 1.2em;
+}
+
+
+input[type=email]:focus  {
+    border: none;
+    outline: none;
+    border-style: solid;
+    border-color: rgba(5, 60, 122, 0.623);
+    
+}
+
+input[type=email]{
+    background-color: darkslategrey;
+    font-size: 1.2em;
+}
+
+input[type=password]:focus  {
+    border: none;
+    outline: none;
+    border-style: solid;
+    border-color: rgba(5, 60, 122, 0.623);
+    
+}
+
+input[type=password]{
+    background-color: darkslategrey;
+    font-size: 1.2em;
+}
+
+input{
+    outline: none;
+    border: none;
+    height: 40px;
+    border-radius: 10px;
+ }
+
+select{
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    height: 40px;
+    background-color: darkslategrey;
+    font-size: 1.3em;
+    color:rgba(0, 0, 0, 0.733);
+}
+
+select > option{
+    font-size: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+form>button{
+    border: none;
+    margin-top: 10px;
+    background-color: rgba(34, 36, 168, 0.842);
+    height: 40px;
+    border-radius: 10px;
+    font-size: 1.4em;
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+}

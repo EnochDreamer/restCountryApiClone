@@ -1,0 +1,30 @@
+.country{
+    display: flex;
+    flex-direction: row;
+    border-radius: 15px;
+    background-color: rgb(70, 93, 99);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-left: 15px;
+}
+.country-actions{
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+
+}
+
+.country-actions>svg{
+    margin: 5px;
+    height: 1.5em;
+    cursor: pointer;
+}
+
+.delete{
+    fill: rgb(161, 69, 15);
+    background-color: rgb(245, 229, 179);
+    border-radius: 20px;
+    
+}
+.edit{
+    fill: azure;
+}
